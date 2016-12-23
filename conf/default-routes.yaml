@@ -1,0 +1,15 @@
+plugins:
+  hapi-views:
+    debug: true
+    views:
+      '/':
+        view: 'pages/main/view'
+      '/about':
+        view: 'pages/about/view'
+        method:
+          name: 'pageData.get'
+          args:
+            - 'lean-in-org-2'
+            - 'about'
+        data:
+          content: '{method}'

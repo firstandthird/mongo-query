@@ -1,0 +1,12 @@
+plugins:
+  vision:
+    _priority: -5
+  inert:
+    _priority: -4
+  hapi-mongodb:
+    url: '{{mongo.url}}'
+    _priority: -3
+    decorate: true
+  hapi-view-context:
+    enableDebug: true
+  clientkit-helpers:

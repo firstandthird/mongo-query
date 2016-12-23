@@ -1,0 +1,16 @@
+app:
+  build: .
+  command: 'npm run dev'
+  volumes:
+    - '.:/app'
+    - '/app/node_modules'
+  environment:
+    PORT: 8080
+    VIRTUAL_HOST: 'mongo-query.*'
+  ports:
+    - '8080'
+  links:
+    - 'db:mongo'
+db:
+  image: 'mongo'
+  command: 'mongod --quiet --smallfiles'

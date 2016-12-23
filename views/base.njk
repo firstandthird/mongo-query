@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block pageTitle %}{{ config.meta.title }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ 'common.css' | asset | cdn }}">
+    {% block stylesheets %}{% endblock %}
+  </head>
+  <body>
+    {% include "_modules/header/view.njk" %}
+
+    {% block content %}{% endblock %}
+
+    {% include "_modules/footer/view.njk" %}
+
+    <link rel="stylesheet" href="{{ 'common.js' | asset | cdn }}">
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>

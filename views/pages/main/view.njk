@@ -1,0 +1,20 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  <section class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <span class="mono"><strong>db.</strong></span>
+        <select id="database">
+          <option value="">Select One &raquo;</option>
+        </select>
+        <select id="collection" disabled>
+          <option value=""><em>Collection</em></option>
+        </select>
+      </div>
+      <div class="col-md-7">
+        <textarea id="query"></textarea>
+      </div>
+    </div>
+  </section>
+{% endblock %}
