@@ -1,0 +1,8 @@
+assetPath: 'views'
+dist: 'public/_dist'
+
+reloadConfig:
+  taskOnUpdate: 'default'
+stylesheets:
+  files:
+    'common.css': '{{assetPath}}/common.css'

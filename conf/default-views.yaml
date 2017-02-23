@@ -4,7 +4,7 @@ views:
   path: '{{CWD}}/views'
   defaultExtension: 'njk'
   compileMode: 'async'
-  isCached: false
+  isCached: true
 
 assets:
   path: '{{CWD}}/public'
