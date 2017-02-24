@@ -1,0 +1,5 @@
+views:
+  isCached: false
+assets:
+  routeConfig:
+    cache: false

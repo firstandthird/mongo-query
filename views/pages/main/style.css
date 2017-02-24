@@ -1,0 +1,10 @@
+body {
+  background-color: #eaeaea;
+}
+
+#query-container {
+  height: 100px;
+  & .CodeMirror {
+    height: 100px;
+  }
+}

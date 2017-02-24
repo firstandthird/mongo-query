@@ -1,0 +1,17 @@
+app:
+  image: 'firstandthird/node:6.7'
+  command: 'npm run dev'
+  volumes:
+    - '.:/app'
+  environment:
+    PASSWORD: 'qu3ry'
+    PORT: 8080
+    VIRTUAL_HOST: 'mongo-query.*'
+    FORCE_COLOR: 1
+  ports:
+    - '8080'
+  links:
+    - 'db:mongo'
+db:
+  image: 'mongo'
+  command: 'mongod --quiet --smallfiles'

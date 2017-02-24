@@ -1,0 +1,6 @@
+name: 'mongo-query'
+mongo:
+  db: 'mongo-query'
+  host: 'mongo'
+  port: 27017
+  url: "mongodb://{{mongo.host}}:{{mongo.port}}/{{mongo.db}}"

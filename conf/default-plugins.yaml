@@ -1,0 +1,18 @@
+plugins:
+  vision:
+    _priority: -5
+  inert:
+    _priority: -4
+  hapi-password:
+    _priority: -3
+    password: '{{ ENV.PASSWORD }}'
+    verbose: true
+  hapi-mongodb:
+    url: '{{mongo.url}}'
+    _priority: -3
+    decorate: true
+  hapi-auto-handler:
+    _priority: -4
+  hapi-view-context:
+    enableDebug: true
+  clientkit-helpers:
