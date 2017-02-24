@@ -1,1 +1,4 @@
 @import 'clientkit.css';
+@import 'codemirror/lib/codemirror.css';
+@import 'codemirror/theme/cobalt.css';
+@import 'prismjs/themes/prism-twilight.css';

@@ -1,0 +1,14 @@
+body {
+  background-color: #eaeaea;
+}
+
+.button-green {
+  background-color: #5cb85c;
+}
+
+#query-container {
+  height: 100px;
+  & .CodeMirror {
+    height: 100px;
+  }
+}

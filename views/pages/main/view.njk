@@ -1,19 +1,34 @@
 {% extends "base.njk" %}
 
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ 'edit.css' | asset | cdn }}">
+{% endblock %}
+
+{% block scripts %}
+<!-- Script Tags -->
+<script type="text/javascript" src="{{ 'edit.js' | asset | cdn }}"></script>
+{% endblock %}
+
 {% block content %}
   <section class="container">
-    <div class="row">
-      <div class="col-md-5">
-        <span class="mono"><strong>db.</strong></span>
-        <select id="database">
-          <option value="">Select One &raquo;</option>
-        </select>
-        <select id="collection" disabled>
-          <option value=""><em>Collection</em></option>
-        </select>
-      </div>
-      <div class="col-md-7">
-        <textarea id="query"></textarea>
+    <div data-module="QueryModule">
+      <div class="row">
+        <div class="col-12 margin-bottom-sm">
+          <select id="database" data-name="databases" data-action="getCollections" data-action-type="change">
+            <option value="">Select One &raquo;</option>
+          </select>
+          <span class="mono"><strong>db.</strong></span>
+          <select id="collection" disabled data-name="collections">
+            <option value=""><em>Collection</em></option>
+          </select>
+          <span class="mono"><strong>.find()</strong></span>
+          <a href="#" data-action="doQuery" class="button button-sm button-green">Submit</a>
+        </div>
+        <div class="col-12" id="query-container">
+          <textarea id="query" data-name="editor">{}</textarea>
+        </div>
+        <div class="col-12" id="query-result" data-name="response">
+        </div>
       </div>
     </div>
   </section>
