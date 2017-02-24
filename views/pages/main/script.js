@@ -97,13 +97,36 @@ class QueryModule extends Domodule {
     });
   }
 
+  submitInsert() {
+    const data = {
+      data: JSON.parse(this.editor.getValue())
+    };
+
+    const db = this.els.databases.value;
+    const coll = this.els.collections.value;
+
+    Ajax.request(`/api/databases/${db}/collections/${coll}`, 'POST', data, (err, resp) => {
+      if (err) {
+        alert(err); // eslint-disable-line no-alert
+      }
+      console.log(resp); // eslint-disable-line no-console
+    });
+  }
+
   doAction(el, event) {
     event.preventDefault();
     const action = this.els.queryAction.value;
 
-    console.log(action); // eslint-disable-line no-console
-
-    this.submitQuery();
+    switch (action) {
+      case 'find':
+        this.submitQuery();
+        break;
+      case 'insert':
+        this.submitInsert();
+        break;
+      default:
+        alert('Action not allowed'); // eslint-disable-line no-alert
+    }
   }
 }
 

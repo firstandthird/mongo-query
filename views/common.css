@@ -9,5 +9,8 @@
   &:hover {
     background-color: #529e52;
   }
+  &:focus {
+    background-color: #529e52;
+  }
 }
 

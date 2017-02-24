@@ -11,7 +11,6 @@ exports.query = {
     const dbQ = db.db(dbName).collection(collection);
 
     const q = request.server.methods.parse(qString);
-    
     dbQ.find(q).toArray((err, data) => {
       if (err) {
         throw err;

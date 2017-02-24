@@ -3,18 +3,17 @@ const reduce = require('lodash.reduce');
 
 module.exports = {
   method(qStr) {
-    
     const ObjectID = this.mongo.ObjectID;
 
     let q;
     try {
       q = JSON.parse(qStr);
-    } catch(e) {
+    } catch (e) {
       return false;
     }
 
     const query = reduce(q, (r, val, key) => {
-      if (key === "_id") {
+      if (key === '_id') {
         val = new ObjectID(val);
       }
 
