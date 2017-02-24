@@ -97,8 +97,12 @@ class QueryModule extends Domodule {
     });
   }
 
-  doQuery(el, event) {
+  doAction(el, event) {
     event.preventDefault();
+    const action = this.els.queryAction.value;
+
+    console.log(action); // eslint-disable-line no-console
+
     this.submitQuery();
   }
 }

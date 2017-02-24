@@ -4,6 +4,7 @@ app:
   volumes:
     - '.:/app'
   environment:
+    PASSWORD: 'qu3ry'
     PORT: 8080
     VIRTUAL_HOST: 'mongo-query.*'
     FORCE_COLOR: 1

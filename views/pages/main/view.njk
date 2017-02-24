@@ -21,8 +21,10 @@
           <select id="collection" disabled data-name="collections">
             <option value=""><em>Collection</em></option>
           </select>
-          <span class="mono"><strong>.find()</strong></span>
-          <a href="#" data-action="doQuery" class="button button-sm button-green">Submit</a>
+          <select id="action" data-name="queryAction">
+            <option value="find">.find()</option>
+          </select>
+          <a href="#" data-action="doAction" class="button button-sm button-green">Submit</a>
         </div>
         <div class="col-12" id="query-container">
           <textarea id="query" data-name="editor">{}</textarea>
