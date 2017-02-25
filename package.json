@@ -28,7 +28,7 @@
     "domodule": "^5.1.1",
     "hapi-auto-handler": "^1.2.3",
     "hapi-mongodb": "6.2.1",
-    "hapi-password": "^3.4.0",
+    "hapi-password": "4.0.0",
     "hapi-view-context": "3.0.0",
     "hapi-views": "3.4.1",
     "inert": "4.1.0",

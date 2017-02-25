@@ -1,4 +1,7 @@
 name: 'mongo-query'
+connection:
+  state:
+    isSecure: false
 mongo:
   db: 'mongo-query'
   host: 'mongo'
