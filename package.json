@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "rapptor",
-    "dev": "npm install && concurrently 'nodemon -x npm start' 'npm run clientkit:dev'",
+    "dev": "npm install && npm prune && concurrently 'nodemon -x npm start' 'npm run clientkit:dev'",
     "dev:server": "npm install && nodemon",
     "clientkit:prod": "clientkit",
     "clientkit:dev": "clientkit dev",
     "lint": "eslint ."
   },
+  "pre-commit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/firstandthird/mongo-query.git"

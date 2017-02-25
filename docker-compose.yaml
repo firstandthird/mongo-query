@@ -1,8 +1,8 @@
 app:
-  image: 'firstandthird/node:6.7'
-  command: 'npm run dev'
+  image: 'firstandthird/node:6.10-1-nobuild'
+  command: 'dumb-init npm run dev'
   volumes:
-    - '.:/app'
+    - '.:/home/app/src'
   environment:
     PASSWORD: 'qu3ry'
     PORT: 8080
