@@ -1,4 +1,7 @@
 name: 'mongo-query'
+connection:
+  state:
+    isSecure: false
 mongo:
   host: "{{ENV.MONGO_PORT_27017_TCP_ADDR}}"
   port: "{{ENV.MONGO_PORT_27017_TCP_PORT}}"

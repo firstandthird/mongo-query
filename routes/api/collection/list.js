@@ -9,8 +9,6 @@ exports.listCollections = {
     const dbQ = db.db(dbName);
 
     dbQ.listCollections({}).toArray((err, data) => {
-      console.log(err, data);
-
       if (err) {
         throw err;
       }
