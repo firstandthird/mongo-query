@@ -1,6 +1,8 @@
 name: 'mongo-query'
 mongo:
-  db: 'mongo-query'
-  host: 'mongo'
-  port: 27017
-  url: "mongodb://{{mongo.host}}:{{mongo.port}}/{{mongo.db}}"
+  host: "{{ENV.MONGO_PORT_27017_TCP_ADDR}}"
+  port: "{{ENV.MONGO_PORT_27017_TCP_PORT}}"
+  username: "{{ENV.MONGO_USERNAME || null}}"
+  password: "{{ENV.MONGO_PASSWORD || null}}"
+  auth: "{{ ENV.MONGO_USERNAME ? mongo.username+':'+mongo.password+'@' : '' }}"
+  url: "mongodb://{{mongo.auth}}{{mongo.host}}:{{mongo.port}}"
