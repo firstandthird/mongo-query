@@ -1,3 +1,4 @@
+const Boom = require('boom');
 
 exports.listCollections = {
   method: 'GET',
@@ -10,7 +11,7 @@ exports.listCollections = {
 
     dbQ.listCollections({}).toArray((err, data) => {
       if (err) {
-        throw err;
+        return reply(Boom.badImplementation(err));
       }
       const collections = [];
 
