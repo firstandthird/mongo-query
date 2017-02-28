@@ -1,0 +1,12 @@
+assetPath: 'views'
+dist: 'public/_dist'
+
+reloadConfig:
+  taskOnUpdate: 'default'
+stylesheets:
+  files:
+    'common.css': '{{assetPath}}/common.css'
+    'edit.css': '{{assetPath}}/pages/main/style.css'
+scripts:
+  files:
+    'edit.js': '{{assetPath}}/pages/main/script.js'

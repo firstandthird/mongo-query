@@ -1,0 +1,6 @@
+plugins:
+  hapi-views:
+    debug: true
+    views:
+      '/':
+        view: 'pages/main/view'

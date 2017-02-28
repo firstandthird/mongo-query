@@ -1,0 +1,16 @@
+@import 'clientkit.css';
+@import 'codemirror/lib/codemirror.css';
+@import 'codemirror/theme/cobalt.css';
+@import 'prismjs/themes/prism-twilight.css';
+
+
+.button-green {
+  background-color: #5cb85c;
+  &:hover {
+    background-color: #529e52;
+  }
+  &:focus {
+    background-color: #529e52;
+  }
+}
+

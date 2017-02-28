@@ -1,0 +1,3 @@
+docker-compose.dev.yaml
+node_modules
+public/_dist

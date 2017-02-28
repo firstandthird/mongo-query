@@ -1,0 +1,63 @@
+{
+  "name": "mongo-query",
+  "version": "0.0.0",
+  "description": "A mongo query client",
+  "main": "index.js",
+  "scripts": {
+    "start": "rapptor",
+    "dev": "npm install && npm prune && concurrently 'nodemon -x npm start' 'npm run clientkit:dev'",
+    "dev:server": "npm install && nodemon",
+    "clientkit:prod": "clientkit",
+    "clientkit:dev": "clientkit dev",
+    "lint": "eslint ."
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firstandthird/mongo-query.git"
+  },
+  "author": "",
+  "license": "CUSTOM",
+  "bugs": {
+    "url": "https://github.com/firstandthird/mongo-query/issues"
+  },
+  "dependencies": {
+    "bequest": "^1.3.1",
+    "clientkit": "1.0.1",
+    "clientkit-helpers": "1.0.0",
+    "codemirror": "^5.24.0",
+    "domodule": "^5.1.1",
+    "hapi-auto-handler": "^1.2.3",
+    "hapi-mongodb": "6.2.1",
+    "hapi-password": "4.0.0",
+    "hapi-view-context": "3.0.0",
+    "hapi-views": "3.4.1",
+    "inert": "4.1.0",
+    "lodash.find": "4.6.0",
+    "lodash.reduce": "4.6.0",
+    "prismjs": "^1.6.0",
+    "rapptor": "1.8.2",
+    "vision": "4.1.1",
+    "vision-nunjucks": "1.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "3.3.0",
+    "eslint": "3.16.1",
+    "eslint-config-firstandthird": "3.3.0",
+    "eslint-plugin-import": "2.2.0",
+    "nodemon": "1.11.0",
+    "pre-commit": "1.2.2"
+  },
+  "eslintConfig": {
+    "extends": "firstandthird",
+    "rules": {
+      "no-underscore-dangle": 0
+    },
+    "parserOptions": {
+      "sourceType": "module"
+    }
+  },
+  "homepage": "https://github.com/firstandthird/mongo-query#readme"
+}
