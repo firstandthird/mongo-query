@@ -3,6 +3,7 @@ connection:
   state:
     isSecure: false
 mongo:
+  single: "{{ENV.MONGODB_SINGLE || 'false'}}"
   host: "{{ENV.MONGODB_HOST || 'mongo'}}"
   port: "{{ENV.MONGODB_PORT || 27017}}"
   username: "{{ENV.MONGODB_USERNAME || null}}"
