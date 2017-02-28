@@ -6,6 +6,12 @@
 
 {% block scripts %}
 <!-- Script Tags -->
+{% if config.mongo.single === true %}
+<script type="text/javascript">
+  window._singleDB = true;
+  window._dbName = '{{ config.mongo.db }}';
+</script>
+{% endif %}
 <script type="text/javascript" src="{{ 'edit.js' | asset | cdn }}"></script>
 {% endblock %}
 
@@ -14,10 +20,15 @@
     <div data-module="QueryModule">
       <div class="row">
         <div class="col-12 margin-bottom-sm">
+          {% if config.mongo.single === true %}
+          <strong>db[{{ config.mongo.db }}].</strong>
+          <input type="hidden" data-name="databases" value="{{ config.mongo.db }}"/>
+          {% else %}
           <select id="database" data-name="databases" data-action="getCollections" data-action-type="change">
             <option value="">Select One &raquo;</option>
           </select>
           <span class="mono"><strong>db.</strong></span>
+          {% endif %}
           <select id="collection" disabled data-name="collections">
             <option value=""><em>Collection</em></option>
           </select>

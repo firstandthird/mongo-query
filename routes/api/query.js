@@ -1,3 +1,4 @@
+const Boom = require('boom');
 
 exports.query = {
   method: 'POST',
@@ -13,7 +14,7 @@ exports.query = {
     const q = request.server.methods.parse(qString);
     dbQ.find(q).toArray((err, data) => {
       if (err) {
-        throw err;
+        return reply(Boom.badImplementation(err));
       }
 
       reply(data);

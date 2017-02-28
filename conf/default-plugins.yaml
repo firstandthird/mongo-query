@@ -15,4 +15,5 @@ plugins:
     _priority: -4
   hapi-view-context:
     enableDebug: true
+    contextHandler: 'viewContext'
   clientkit-helpers:

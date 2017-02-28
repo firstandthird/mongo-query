@@ -3,10 +3,11 @@ connection:
   state:
     isSecure: false
 mongo:
+  single: "{{ENV.MONGODB_SINGLE || 'false'}}"
   host: "{{ENV.MONGODB_HOST || 'mongo'}}"
   port: "{{ENV.MONGODB_PORT || 27017}}"
   username: "{{ENV.MONGODB_USERNAME || null}}"
   password: "{{ENV.MONGODB_PASSWORD || null}}"
   db: "{{ENV.MONGODB_DB || 'admin'}}"
-  auth: "{{ ENV.MONGO_USERNAME ? mongo.username+':'+mongo.password+'@' : '' }}"
+  auth: "{{ ENV.MONGODB_USERNAME ? mongo.username+':'+mongo.password+'@' : '' }}"
   url: "mongodb://{{mongo.auth}}{{mongo.host}}:{{mongo.port}}/{{mongo.db}}"

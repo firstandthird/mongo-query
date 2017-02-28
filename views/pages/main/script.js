@@ -14,11 +14,16 @@ const textArea = document.getElementById('query'); // eslint-disable-line no-unu
 class QueryModule extends Domodule {
   constructor(el) {
     super(el);
+    this.singleDB = (window._singleDB) ? window._dbName : false;
     this.setupDbs();
     this.editor = this.setupEditor();
   }
 
   setupDbs() {
+    if (this.singleDB !== false) {
+      this.getCollections({ value: this.singleDB });
+      return;
+    }
     const dbSelect = this.els.databases;
     Ajax.request('/api/databases', 'GET', null, (err, resp) => {
       if (err) {
@@ -42,6 +47,7 @@ class QueryModule extends Domodule {
     const collSelect = this.els.collections;
     collSelect.innerHTML = '<option>Collection</option>';
     collSelect.disabled = true;
+
     Ajax.request(`/api/databases/${db}/collections`, 'GET', null, (err, resp) => {
       if (err) {
         alert(err); // eslint-disable-line no-alert
